@@ -4,6 +4,7 @@ jobs:
   Install-and-check-podman:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - run: echo $GITHUB_WORKSPACE
       - run: ls -la $GITHUB_WORKSPACE
       - run: echo $PWD
