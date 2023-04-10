@@ -7,7 +7,7 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install -y software-properties-common
-          sudo add-apt-repository 'deb https://packages.debian.org/ experimental admin'
+          sudo add-apt-repository 'deb https://deb.debian.org/debian experimental admin main'
           sudo apt-get update
           sudo apt-get -y podman
       - run: podman --version
