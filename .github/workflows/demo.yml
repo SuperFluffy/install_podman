@@ -4,12 +4,12 @@ jobs:
   Install-and-check-podman:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository -y 'deb https://deb.debian.org/debian experimental admin main'
-          sudo apt-get update
-          sudo apt-get -y podman
+      - uses: myci-actions/add-deb-repo@latest
+        with:
+          repo: deb https://deb.debian.org/debian experimental admin main
+          repo-name: debian-experimental
+          key-asc: keyring.debian.org
+          install: podman
       - run: podman --version
             
           
