@@ -3,14 +3,6 @@ on: [push]
 jobs:
   Install-and-check-podman:
     runs-on: ubuntu-latest
+    container: fedora:39
     steps:
-      - uses: myci-actions/add-deb-repo@11
-        with:
-          repo: deb https://deb.debian.org/debian experimental admin main
-          repo-name: debian-experimental
-          key-asc: keyring.debian.org
-          install: podman
       - run: podman --version
-            
-          
-      
