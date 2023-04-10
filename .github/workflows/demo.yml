@@ -4,7 +4,10 @@ jobs:
   Install-and-check-podman:
     runs-on: ubuntu-latest
     steps:
+      - run: echo $GITHUB_WORKSPACE
       - run: ls -la $GITHUB_WORKSPACE
+      - run: echo $PWD
+      - run: ls -la
       - name: install podman 4
         run: sudo bash $GITHUB_WORKSPACE/scripts/install_podman.sh
       - run: podman --version
