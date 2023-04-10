@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          - apt update
+          - apt install software-properties-common
           - add-apt-repository 'deb https://packages.debian.org/ experimental admin'
           - apt-get update
           - apt-get podman
