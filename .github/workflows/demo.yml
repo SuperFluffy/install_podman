@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install podman 4
-        run: sudo bash $GITHUB_WORKSPACE/.github/workflows_install_podman.sh
+        run: sudo bash $GITHUB_WORKSPACE/.github/workflows/install_podman.sh
       - run: podman --version
