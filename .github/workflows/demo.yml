@@ -7,7 +7,9 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install -y software-properties-common
-          sudo add-apt-repository 'deb https://deb.debian.org/debian experimental admin main'
+          sudo add-apt-repository -y \
+            -k keyring.debian.org \
+            'deb https://deb.debian.org/debian experimental admin main'
           sudo apt-get update
           sudo apt-get -y podman
       - run: podman --version
